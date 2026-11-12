@@ -1,0 +1,23 @@
+# Conda environment for the eVTOL ASP scheduler.
+# clingo-dl's Python API requires Python 3.9 and is distributed via the
+# `potassco` channel, so conda (not pip) is required for the solver stack.
+#
+#   conda env create -f environment.yml
+#   conda activate evtol-py3.9
+name: evtol-py3.9
+channels:
+  - potassco
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - clingo=5.6.2
+  - clingo-dl=1.4.0
+  - numpy=1.26
+  - pandas=1.2
+  - openpyxl=3.1        # pandas engine for reading MER_LMP_Information.xlsx
+  - matplotlib=3.9      # visualize/
+  - networkx=3.2        # visualize/
+  - pip
+  - pip:
+      - gurobipy==12.0.3  # MILP baseline; last release supporting Python 3.9 (needs a Gurobi license)

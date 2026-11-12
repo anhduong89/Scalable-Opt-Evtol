@@ -1,4 +1,4 @@
-% ------ optimization_2.1: penalize empty flights and not stationed. (could has better solution)
+% ------ optimization_2: penalize unserved customers.
 
-penalty(D, E, S, 1) :- as(D, E, 0, S), not edge_loop(E).
-:~ penalty(D, _, S, P). [P@0, D, S]
+% optimization_2, aggregate-free: maximize served passengers (= minimize unserved)
+:~ flight(D,E,W,X). [-W@1, D,E,X]

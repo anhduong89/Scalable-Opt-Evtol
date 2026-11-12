@@ -1,4 +1,3 @@
-% ------ optimization_1: penalize unserved customers.
-
-remain_cust(E,N-P) :- request(_,E,N), P=#sum{W,D,X: as(D,E,W,X)}, N!=P.
-:~ remain_cust(E,P). [P@1, E]
+% % ------ optimization_1: Maximize revenue
+revenue(D, X, W*S) :- flight(D, E, W, X), distance(E,S).
+:~ revenue(D, X, V). [-V@3, D, X]

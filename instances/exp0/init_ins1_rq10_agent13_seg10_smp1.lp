@@ -1,16 +1,16 @@
 agent(0..12).
-init_loc(0, jfk).
-init_loc(1, lga).
-init_loc(2, teb).
-init_loc(3, ryend).
-init_loc(4, cri).
-init_loc(5, cimbl).
-init_loc(6, dandy).
+init_loc(0, lga).
+init_loc(1, cri).
+init_loc(2, dandy).
+init_loc(3, dandy).
+init_loc(4, dandy).
+init_loc(5, jfk).
+init_loc(6, teb).
 init_loc(7, jfk).
-init_loc(8, lga).
-init_loc(9, teb).
+init_loc(8, ryend).
+init_loc(9, dandy).
 init_loc(10, ryend).
-init_loc(11, cri).
+init_loc(11, ryend).
 init_loc(12, cimbl).
 emax(0, 60).
 emax(1, 60).

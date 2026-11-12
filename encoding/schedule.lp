@@ -12,34 +12,34 @@ max_seg(D,max_seg):-agent(D).
 % ------ GENERATE ROUTING
 
 % -- assign edge to each segment
-1 {as(D,E,0..C,X):edge(E)} 1 :- agent(D), capacity(D,C), X=start_seg..max_seg.
+1 {flight(D,E,0..C,X):edge(E)} 1 :- agent(D), capacity(D,C), X=start_seg..max_seg.
 
 % total delivered customers can not excess demand
-:- (R+1) #sum{W,D,X:as(D,E,W,X)}, edge(E), request(_,E,R).
+:- (R+1) #sum{W,D,X:flight(D,E,W,X)}, edge(E), request(_,E,R).
 
-:- 1 #sum{W,D,X:as(D,E,W,X)}, edge(E), not request(_,E,_).
+:- 1 #sum{W,D,X:flight(D,E,W,X)}, edge(E), not request(_,E,_).
 
 % stationed aircraft does not carry customers
-:- as(_,E,W,_), W > 0, edge_loop(E).
+:- flight(_,E,W,_), W > 0, edge_loop(E).
 
 % start vertiport as specicfied
-:- init_loc(D,V), as(D,(V',_),_,1), V!=V'.
+:- init_loc(D,V), flight(D,(V',_),_,1), V!=V'.
 
 % consecutive trips need to be connected
-:-as(D,(V,V1),_,X),as(D,(V2,V3),_,X+1),V1!=V2.
+:-flight(D,(V,V1),_,X),flight(D,(V2,V3),_,X+1),V1!=V2.
 
 %  ----------------------------
 % ----- TIME SCHEDULE WITH DIFFERENT CONSTRAINT
 % start time at initial vertiport = charge duration
 
-&diff {start(D,E,1)} = 0 :- as(D,E,_,1).
+&diff {start(D,E,1)} = 0 :- flight(D,E,_,1).
 
-&diff {arrival(D,E,M)} <= horizon :- as(D,E,_,M).
+&diff {arrival(D,E,M)} <= horizon :- flight(D,E,_,M).
 
-&diff {arrival(D,E,X) - start(D,E,X)} = FT :- flight_time(E,FT), as(D,E,_,X).
+&diff {arrival(D,E,X) - start(D,E,X)} = FT :- flight_time(E,FT), flight(D,E,_,X).
 
-&diff {start(D,E',X+1) - arrival(D,E,X)} >= CT :- charge_time(E',CT), as(D,E,_,X), as(D,E',_,X+1).
+&diff {start(D,E',X+1) - arrival(D,E,X)} >= CT :- charge_time(E',CT), flight(D,E,_,X), flight(D,E',_,X+1).
 %  ----------------------------
 
 % display
-#show as/4.
+#show flight/4.

@@ -2,23 +2,14 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import os
 import re
+import sys
 import numpy as np
-city = ["jfk", "lga", "teb", "ryend", "cri", "cimbl", "dandy"]
-dist = np.array(
-    [
-        [0.,          10.48113508,  18.51467981,  18.54127528,  5.7385456,    13.03650962,  20.09902115], 
-        [10.48113508,  0.,           9.15619145,   15.04929904,  10.56004164,  6.52505341,   13.22524436],
-        [18.51467981,  9.15619145,   0.,           11.47944457,  16.1038714,   6.31668958,   6.33708216 ],
-        [18.54127528,  15.04929904,  11.47944457,  0.,           13.32823709,  8.5872692,    6.16996146 ],
-        [5.7385456,    10.56004164,  16.1038714,   13.32823709,  0.,           9.86908414,   16.01052999],
-        [13.03650962,  6.52505341,   6.31668958,   8.5872692,    9.86908414,   0.,           7.31033037 ],
-        [20.09902115,  13.22524436,  6.33708216,   6.16996146,   16.01052999,  7.31033037,   0.         ]
-        ]
-    )
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from constants import CITY_NAMES as city, DIST as dist
 
 def parse_flight_data(line):
     # Pattern to match: as(<agent_ID>,(<origin>, <destination>), <passengers>, <segment>)
-    pattern = r'as\((\d+),\((\w+),(\w+)\),(\d+),(\d+)\)'
+    pattern = r'flight\((\d+),\((\w+),(\w+)\),(\d+),(\d+)\)'
     match = re.match(pattern, line.strip())
     if match:
         agent_id = int(match.group(1))

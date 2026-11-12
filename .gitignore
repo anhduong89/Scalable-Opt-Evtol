@@ -1,0 +1,31 @@
+# stored answer sets (regenerated per run, large at scale)
+results/answer_sets/
+
+# python bytecode
+__pycache__/
+*.py[cod]
+
+# pickled experiment results
+*.pkl
+
+# editor / OS cruft
+.DS_Store
+.vscode/
+
+# InitLoc side-effect scratch file
+instances/init_decoupled.lp
+
+# experiment run logs
+*.log
+*results/
+# Gurobi license (machine-specific, never commit)
+gurobi.lic
+
+# private / not for the public companion repo
+.claude/
+docs/
+Response_and_TrackedChanges_*.pdf
+cover_letter_revised.tex
+main_diff.*
+main_tracked_changes.pdf
+response_to_reviewer_v*.tex

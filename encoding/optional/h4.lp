@@ -1,0 +1,1 @@
+#heuristic flight(_,_,W,_),W>0. [1,true]
