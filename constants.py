@@ -21,7 +21,7 @@ DIST = np.array([
     [20.09902115,  13.22524436,  6.33708216,   6.16996146,   16.01052999,  7.31033037,   0.         ],
 ])
 
-# Physical / cost parameters (see paper, Section V).
+# Physical / cost parameters.
 VELOCITY = 100        # flight speed, mph
 E_DISCHG = 4          # discharge rate, kWh/mile
 E_MAX = 100           # battery capacity, kWh

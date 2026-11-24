@@ -20,12 +20,3 @@ instances/init_decoupled.lp
 *results/
 # Gurobi license (machine-specific, never commit)
 gurobi.lic
-
-# private / not for the public companion repo
-.claude/
-docs/
-Response_and_TrackedChanges_*.pdf
-cover_letter_revised.tex
-main_diff.*
-main_tracked_changes.pdf
-response_to_reviewer_v*.tex

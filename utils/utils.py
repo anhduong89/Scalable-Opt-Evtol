@@ -21,7 +21,7 @@ from constants import (CITY_NAMES as city_names, DIST as dist, VELOCITY as veloc
 
 nb_edges = len(city_names) * (len(city_names) - 1)
 
-# Derived rates / unit conversions (see paper, Section V).
+# Derived rates / unit conversions.
 FLIGHT_TIME_FACTOR = 60 / velocity     # flight minutes per mile (= 0.6)
 CHARGE_FACTOR = 24 / 25                 # charge minutes per flight minute (= 0.96)
 INITIAL_CHARGE_MIN = 25                 # battery (charge-minutes) at the first segment

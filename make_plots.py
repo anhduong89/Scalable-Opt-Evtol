@@ -1,5 +1,4 @@
-"""Generate the Table-I result plots (profit, run time, service rate) as SVGs,
-matching the style of the original paper figures:
+"""Generate the result plots (profit, run time, service rate, trade-offs) as SVGs:
 
   * service_rate.svg : line plot, circle markers, "Service Rate (%)"
   * run_time.svg     : line plot, square markers, "Runtime (s)"
@@ -11,7 +10,7 @@ matching the style of the original paper figures:
   * pareto_all_profit.svg   : runtime vs profit trade-off, one panel per scale
 
 x-axis is categorical, one tick per problem size labelled ins(customers,aircraft).
-Each point/bar is the mean over the 5 samples (no error bars, as in the original).
+Each point/bar is the mean over the 5 samples (no error bars).
 """
 import csv
 import os
@@ -24,7 +23,7 @@ import matplotlib.pyplot as plt
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
 NB_SAMPLE = 5
 
-# Table-I configurations with their (plain-text) legend labels, in plot order.
+# Plotted configurations with their (plain-text) legend labels, in plot order.
 CONFIGS = [
     ("Greedy", "Greedy"),
     ("O3",     "O3"),

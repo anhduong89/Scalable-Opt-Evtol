@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the paper below."
+message: "If you use this software, please cite it as below."
+type: software
 title: "Scalable Optimization eVTOL Aircraft Scheduling with Hybrid Answer Set Programming"
 authors:
   - family-names: Nguyen
@@ -17,19 +18,3 @@ authors:
   - family-names: Son
     given-names: Tran Cao
     affiliation: New Mexico State University
-preferred-citation:
-  type: article
-  title: "Scalable Optimization eVTOL Aircraft Scheduling with Hybrid Answer Set Programming"
-  journal: "IEEE Transactions on Intelligent Transportation Systems"
-  year: 2026
-  authors:
-    - family-names: Nguyen
-      given-names: Anh-Duong
-    - family-names: Pham
-      given-names: Loc
-    - family-names: Vo Khac
-      given-names: Minh Nguyen
-    - family-names: Sun
-      given-names: Liang
-    - family-names: Son
-      given-names: Tran Cao

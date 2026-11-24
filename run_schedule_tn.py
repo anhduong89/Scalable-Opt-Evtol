@@ -6,7 +6,7 @@ Fleet size comes from EstimateMinAgentsGivenSegmentsAndCustomers given a fixed
 segment count and per-edge demand -- the same formulation as the NY exp0 bench.
 
 Uses the O1 (maximize revenue) optimization module with the H2 heuristic
-(prioritize higher-revenue flights earlier) -- the paper's "O1H2" config -- run
+(prioritize higher-revenue flights earlier) -- the "O1H2" configuration of run_experiments.py -- run
 anytime with --heuristic=Domain up to TIME_LIMIT seconds; the last model clingo
 reports is its best found so far.
 
@@ -33,7 +33,7 @@ HORIZON = 180          # minutes
 NB_RQ = 30             # requested passengers per directed edge
 AIRCRAFT_CAPACITY = 4  # passengers/flight
 SEED = 0
-# Fleet size AND segment count are computed jointly from the paper's
+# Fleet size AND segment count are computed jointly from the fleet-sizing
 # formulation (EstimateMinAgents) using TN's own distances/physics -- NOT a
 # fixed 10. TN's long legs (avg 63 min flight+charge) mean only ~3 flights fit
 # in the 180-min horizon, so the optimal segment count is ~3 (with ~254

@@ -3,10 +3,11 @@
 # LaTeX tables and SVG plots from the fresh CSVs. Self-contained: run detached in
 # its own tmux session so it survives the window closing.
 set -u
-DIR=/home/duong/Dropbox/NMSU/NASA_ULI_2022/evtol-scheduling/IEEE-ITSS-2026-public
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RUN_LOG="$DIR/results/rerun_o2_h2o2.log"
 FIN_LOG="$DIR/results/finalize.log"
-PY_CONDA=/home/duong/miniconda3/envs/evtol-py3.9/bin/python
+# Python from the evtol-py3.9 conda env; override with PY_CONDA=/path/to/python
+PY_CONDA="${PY_CONDA:-python}"
 cd "$DIR" || exit 1
 
 log() { echo "[$(date '+%F %T')] $*" | tee -a "$FIN_LOG"; }

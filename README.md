@@ -1,10 +1,6 @@
 # Scalable Optimization eVTOL Aircraft Scheduling with Hybrid Answer Set Programming
 
-Companion code for the paper *"Scalable Optimization eVTOL Aircraft Scheduling
-with Hybrid Answer Set Programming"* (IEEE Transactions on Intelligent
-Transportation Systems, 2026).
-
-It schedules a fleet of electric vertical-take-off-and-landing (eVTOL) aircraft
+This repository schedules a fleet of electric vertical-take-off-and-landing (eVTOL) aircraft
 over a network of vertiports — deciding which flights to fly, how many
 passengers to carry, and the departure/arrival/charging times — using
 Answer Set Programming with difference constraints (clingo + clingo-dl).
@@ -32,17 +28,17 @@ function is used in each step).
 
 | Path | Description |
 |------|-------------|
-| `encoding/schedule.lp` | Core ASP encoding: routing + clingo-dl timing (paper rules 23–32). |
+| `encoding/schedule.lp` | Core ASP encoding: routing + clingo-dl timing constraints. |
 | `encoding/optional/` | Optional objective/heuristic modules (see mapping below). |
 | `encoding/baseline.lp`, `encoding/baseline_py.py` | 1-segment look-ahead greedy baseline. |
 | `encoding/compute_revenue.lp` | Computes served customers / revenue from a schedule. |
 | `solverClingoAPI.py` | `Schedule` / `BaselineSchedule` solving API around clingo. |
-| `run_experiments.py` | Experiment driver (instance generation + Table I/II runs). |
+| `run_experiments.py` | Experiment driver (instance generation + benchmark runs). |
 | `constants.py` | Network (vertiports, distances) and physical/cost constants. |
 | `instances/` | `network.lp`, the `exp0/` benchmark instances, and generators. |
 | `utils/utils.py` | Profit/cost computation (`CalProfit`) and fleet-size estimation. |
 | `visualize/` | Schedule trajectory plotting. |
-| `results/` | Benchmark result CSVs and paper figures. |
+| `results/` | Benchmark result CSVs and figures. |
 
 ## Optimization / heuristic modules
 

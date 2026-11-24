@@ -97,7 +97,7 @@ flowchart TD
 ### 5. Analysis & visualization
 | | |
 |---|---|
-| **Tables/plots** | `results/view.ipynb` reads the `exp0_*.csv` files → paper figures (`results/{profit,runtime,service_rate}.svg`) |
+| **Tables/plots** | `results/view.ipynb` reads the `exp0_*.csv` files → figures (`results/{profit,runtime,service_rate}.svg`) |
 | **Trajectories** | `visualize/visualize.py` reads `results/trajectories.lp` → `visualize/all_agents_trajectory.svg` |
 
 ## Function call chain

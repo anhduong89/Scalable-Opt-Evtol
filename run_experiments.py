@@ -1,4 +1,4 @@
-"""Experiment driver for the IEEE-ITSS-2026 benchmark (paper Tables I & II).
+"""Experiment driver for the exp0 scheduling benchmark.
 
 `CreateInstance` (re)generates the `instances/exp0/` benchmark; `RunExp0` runs
 every configuration over it, writing per-config result CSVs and storing each

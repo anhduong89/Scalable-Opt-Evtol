@@ -1,10 +1,10 @@
-"""Generate the IEEE-ITSS-2026 LaTeX result tables from results/exp0_*.csv.
+"""Generate the LaTeX result tables from results/exp0_*.csv.
 
 Reads one CSV per configuration (all share the same 30-instance grid: 6 demand
 sizes x 5 samples, in order), and emits two `table*` environments:
 
-  Table I : Greedy, O1, O2, H2, O1H2, O2H2
-  Table II: O3, H1, O3H2
+  table1.tex: Greedy, O3, H2, O1H2, O2H2, O3H2
+  table2.tex: O1, O2, H1
 
 Each table lists the 30 instances numbered 1..30, with an AVG$\\pm$STD row after
 every block of 5 samples. `served` is a percentage, `pf` is profit ($), `RT` is
@@ -17,7 +17,7 @@ import statistics
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
 NB_SAMPLE = 5
 
-# config key -> LaTeX header label (matching the subscript style of the paper)
+# config key -> LaTeX header label
 LABELS = {
     "Greedy": "Greedy",
     "O1":  r"O{\scriptsize$1$}",
