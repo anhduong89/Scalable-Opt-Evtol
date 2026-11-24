@@ -80,10 +80,6 @@ clingo-dl encoding/schedule.lp encoding/optional/h2.lp \
   -c start_seg=1 -c max_seg=10 -c horizon=180 --heuristic=Domain
 ```
 
-## Citation
-
-See `CITATION.cff`.
-
 ## License
 
 MIT — see `LICENSE`.
